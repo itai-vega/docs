@@ -1,10 +1,24 @@
+export const CustomCodeBlock = ({ code }) => (
+  <pre>
+    <code>{code}</code>
+  </pre>
+);
+
+
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: Reference Table
+description: "Our Reference Table"
 ---
 
-| Function / Operator | Description | Query Syntax |
-|---------------------|-------------|--------------|
-| Nam               | aaa          | `@hoax | where field == "admin"` |
-| aaaAge           | Reported ageaaa | aaa |
-| Joinedaa        | Whether the useraa joined the community | `@hoax \` |
+| Function / Operator | Description                             | Query Syntax                                                                                 |
+|---------------------|-----------------------------------------|----------------------------------------------------------------------------------------------|
+| `where`             | Filters rows based on a condition.      | <CustomCodeBlock code={`@Your-Data-Source\n\| where actor.user.name == "admin"`} />           |
+| `project`           | Selects specified fields.               | <CustomCodeBlock code={`@Your-Data-Source\n\| project actor.user.name, src_endpoint.ip`} />    |
+| `==`                | Checks for equality.                    | <CustomCodeBlock code={`@Your-Data-Source\n\| where src_endpoint.ip == "192.168.1.10"`} />     |
+| `!=`                | Checks for inequality.                  | <CustomCodeBlock code={`@Your-Data-Source\n\| where devices.os.name != "Windows"`} />          |
+| `>`                 | Checks if greater than.                 | <CustomCodeBlock code={`@Your-Data-Source\n\| where traffic.bytes > 2000`} />                  |
+| `>=`                | Checks if greater than or equal to.     | <CustomCodeBlock code={`@Your-Data-Source\n\| where traffic.packets_in >= 1`} />               |
+| `<`                 | Checks if less than.                    | <CustomCodeBlock code={`@Your-Data-Source\n\| where src_endpoint.port < 50000`} />             |
+| `<=`                | Checks if less than or equal to.        | <CustomCodeBlock code={`@Your-Data-Source\n\| where process.id <= 1000`} />                    |
+| `and`               | Combines multiple true conditions.      | <CustomCodeBlock code={`@Your-Data-Source\n\| where devices.os.name == "Windows" and browser_name == "Chrome"`} /> |
+| `or`                | Combines multiple conditions; one true. | <CustomCodeBlock code={`@Your-Data-Source\n\| where devices.os.name == "Windows" or devices.os.name == "Mac"`} />  |
