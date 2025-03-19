@@ -100,8 +100,8 @@
     }
   },
   "integrations": {
-    "gtm": {
-      "tagId": "GTM-PDXVPZQ5"
-    }
+      "ga4": {
+          "measurementId": "G-MVCL3PQWF8"
+      }
   }
 }
